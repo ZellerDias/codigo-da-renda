@@ -1,0 +1,262 @@
+<!doctype html>
+
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Código da Renda — Conquiste sua liberdade financeira</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Space+Mono&display=swap" rel="stylesheet">
+  <meta name="description" content="Código da Renda — Estratégias práticas para ganhar sua primeira renda online e multiplicar seu dinheiro com segurança." />
+  <style>
+    :root{
+      --bg:#0f1113;
+      --card:#111315;
+      --muted:#bfc7cc;
+      --accent:#00d084;
+      --accent-2:#9be7ff;
+      --glass: rgba(255,255,255,0.03);
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial}
+    body{background:linear-gradient(180deg,#0b0c0d 0%, #0f1113 100%);color:#fff;-webkit-font-smoothing:antialiased}header{position:sticky;top:0;z-index:40;background:linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.15));backdrop-filter: blur(6px);padding:14px 18px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:700}
+.brand h1{font-size:16px;margin:0}
+nav{display:flex;gap:18px;align-items:center}
+nav a{color:var(--muted);text-decoration:none;font-weight:600}
+.hamburger{display:none;background:transparent;border:0;color:var(--muted);font-size:24px}
+
+.container{max-width:1100px;margin:28px auto;padding:0 18px}
+
+/* HERO */
+.hero{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:44px;border-radius:18px}
+.hero-inner{display:grid;grid-template-columns:1fr;gap:28px;align-items:center}
+.eyebrow{color:var(--accent);font-weight:700;font-size:13px}
+.headline{font-size:44px;line-height:1.02;margin:0 0 10px 0;font-weight:800}
+.lead{color:var(--muted);font-size:18px;max-width:720px;font-family:'Space Mono', monospace}
+.cta{display:inline-block;margin-top:14px;padding:12px 26px;border-radius:36px;border:2px solid rgba(255,255,255,0.12);background:transparent;color:#fff;text-decoration:none;font-weight:700}
+.cta:hover{transform:translateY(-3px)}
+
+/* CARDS */
+.cards{margin-top:26px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--card);border-radius:14px;padding:12px;overflow:hidden}
+.card img{width:100%;height:140px;object-fit:cover;border-radius:10px}
+.card h3{margin:12px 0 6px 0;font-size:18px}
+.card p{margin:0;color:var(--muted);font-size:14px}
+
+/* SECTIONS */
+section{margin-top:36px}
+.two-col{display:grid;grid-template-columns:1fr 380px;gap:24px;align-items:start}
+
+footer{margin:54px 0 80px 0;color:var(--muted);text-align:center}
+
+/* Responsive */
+@media(max-width:900px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .two-col{grid-template-columns:1fr}
+  nav{display:none}
+  .hamburger{display:block}
+  .headline{font-size:36px}
+}
+@media(max-width:520px){
+  .cards{grid-template-columns:1fr}
+  .headline{font-size:28px}
+  .lead{font-size:16px}
+  .logo{width:32px;height:32px}
+  header{padding:10px 14px}
+}
+
+/* mobile drawer */
+.drawer{position:fixed;right:0;top:0;height:100vh;width:280px;background:#081014;padding:22px;transform:translateX(110%);transition:transform .28s;border-left:1px solid rgba(255,255,255,0.03)}
+.drawer.open{transform:translateX(0)}
+.drawer a{display:block;color:var(--muted);padding:10px 0;text-decoration:none}
+
+.badge{display:inline-block;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--muted);font-weight:600}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">CR</div>
+      <div>
+        <h1 style="margin:0">Código da Renda</h1>
+        <div style="font-size:12px;color:var(--muted);margin-top:2px">Educação financeira & renda extra</div>
+      </div>
+    </div><nav>
+  <a href="#home">Home</a>
+  <a href="#sobre">Sobre</a>
+  <a href="#produtos">Produtos</a>
+  <a href="#blog">Blog</a>
+  <a href="#contato">Contato</a>
+</nav>
+
+<button class="hamburger" id="hamburger">☰</button>
+
+  </header>  <div class="drawer" id="drawer" aria-hidden="true">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <strong style="font-size:18px">Código da Renda</strong>
+      <button id="closeDrawer" style="background:none;border:0;color:var(--muted);font-size:20px">✕</button>
+    </div>
+    <nav style="margin-top:22px">
+      <a href="#home" onclick="closeDrawer()">Home</a>
+      <a href="#sobre" onclick="closeDrawer()">Sobre</a>
+      <a href="#produtos" onclick="closeDrawer()">Produtos</a>
+      <a href="#blog" onclick="closeDrawer()">Blog</a>
+      <a href="#contato" onclick="closeDrawer()">Contato</a>
+    </nav>
+    <div style="margin-top:18px">
+      <a class="badge" href="#contato" onclick="closeDrawer()">Fale comigo</a>
+    </div>
+  </div>  <main class="container">
+    <section id="home" class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">Conquiste sua liberdade financeira</div>
+          <h2 class="headline">Conquiste Sua Liberdade Financeira</h2>
+          <p class="lead">Descubra estratégias práticas para ganhar sua primeira renda online e aprender a multiplicar o seu dinheiro de forma inteligente e segura.</p>
+          <a class="cta" href="#contato" onclick="openWhatsApp()">Quero Começar Agora</a><div class="cards" style="margin-top:22px">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1542223616-2b3a2b1fa3d6?auto=format&fit=crop&w=1200&q=60" alt="finanças">
+          <h3>Como começar</h3>
+          <p>Guia prático para montar sua primeira fonte de renda online.</p>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=1200&q=60" alt="investimentos">
+          <h3>Multiplique seu dinheiro</h3>
+          <p>Estratégias simples e seguras para fazer seu capital crescer.</p>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1537238903695-8f7b8a5d9f35?auto=format&fit=crop&w=1200&q=60" alt="renda extra">
+          <h3>Renda extra</h3>
+          <p>Ideias testadas para gerar renda extra no tempo livre.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="two-col">
+    <div>
+      <h3 style="margin-top:0">Sobre o Código da Renda</h3>
+      <p style="color:var(--muted);font-size:15px;line-height:1.6">O Código da Renda nasceu para ajudar pessoas a organizarem suas finanças e descobrirem caminhos reais para gerar renda online. Aqui você encontra material direto ao ponto, sem enrolação — aulas, guias e estratégias práticas que eu mesmo testei.</p>
+      <p style="color:var(--muted);font-size:15px;line-height:1.6">Se você quer transformar seu tempo em dinheiro e aprender a investir com segurança, esse é o lugar.</p>
+    </div>
+    <aside style="background:var(--glass);padding:18px;border-radius:12px">
+      <h4 style="margin:0 0 8px 0">O que você encontra aqui</h4>
+      <ul style="margin:0;padding-left:18px;color:var(--muted)">
+        <li>Guias passo a passo</li>
+        <li>Mentorias e cursos</li>
+        <li>Ebooks e materiais práticos</li>
+        <li>Apoio via WhatsApp</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<section id="produtos">
+  <h3>Produtos</h3>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:12px">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=1200&q=60" alt="curso">
+      <h3>Curso: Renda Online 0→1</h3>
+      <p>Aprenda o passo a passo para construir sua primeira fonte de renda online.</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1618221066016-71f6b7b7d4d7?auto=format&fit=crop&w=1200&q=60" alt="ebook">
+      <h3>Ebook: Multiplique Seu Capital</h3>
+      <p>Estratégias de baixo risco para começar a investir com confiança.</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1526378723914-3f6a6f1a9b8c?auto=format&fit=crop&w=1200&q=60" alt="mentoria">
+      <h3>Mentoria</h3>
+      <p>Suporte individual para montar seu plano financeiro e de renda.</p>
+    </div>
+  </div>
+</section>
+
+<section id="blog">
+  <h3>Últimos artigos</h3>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:12px">
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=60" alt="artigo">
+      <h3>5 formas reais de ganhar sua primeira renda online</h3>
+      <p style="color:var(--muted)">Exemplos práticos e fáceis de aplicar ainda hoje.</p>
+    </article>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=60" alt="artigo2">
+      <h3>Como montar uma reserva de emergência mesmo ganhando pouco</h3>
+      <p style="color:var(--muted)">Pequenos hábitos financeiros que geram grande resultado.</p>
+    </article>
+  </div>
+</section>
+
+<section id="contato">
+  <h3>Contato</h3>
+  <div style="display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:12px;align-items:start">
+    <div style="background:var(--card);padding:18px;border-radius:12px">
+      <p style="color:var(--muted)">Quer começar agora? Manda uma mensagem no WhatsApp ou preenche o formulário.</p>
+      <form onsubmit="return sendMail(event)">
+        <label style="display:block;margin-top:8px;font-weight:600">Nome</label>
+        <input id="name" required style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:#fff">
+        <label style="display:block;margin-top:8px;font-weight:600">Email</label>
+        <input id="email" type="email" required style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:#fff">
+        <label style="display:block;margin-top:8px;font-weight:600">Mensagem</label>
+        <textarea id="message" rows="4" required style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:#fff"></textarea>
+        <div style="margin-top:12px;display:flex;gap:8px">
+          <button type="submit" style="padding:10px 16px;border-radius:10px;border:0;background:var(--accent);color:#081014;font-weight:700">Enviar</button>
+          <a class="badge" href="#" onclick="openWhatsApp()">Abrir WhatsApp</a>
+        </div>
+      </form>
+    </div>
+    <aside style="padding:18px;background:var(--glass);border-radius:12px">
+      <p style="margin:0 0 8px 0">WhatsApp</p>
+      <p style="color:var(--muted);margin:0 0 12px 0">Clique para abrir uma conversa rápida.</p>
+      <a id="waLink" class="badge" href="#" onclick="event.preventDefault(); openWhatsApp();">Abrir WhatsApp</a>
+
+      <div style="margin-top:18px;color:var(--muted);font-size:13px">
+        <div>Email: <a href="mailto:seuemail@exemplo.com" style="color:var(--muted);text-decoration:underline">seuemail@exemplo.com</a></div>
+        <div style="margin-top:8px">Telefone: <strong style="color:#fff">(xx) xxxxx-xxxx</strong></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<footer>
+  <div>© <span id="year"></span> Código da Renda — Todos os direitos reservados</div>
+</footer>
+
+  </main>  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const drawer = document.getElementById('drawer');
+    const ham = document.getElementById('hamburger');
+    const closeBtn = document.getElementById('closeDrawer');
+    ham.addEventListener('click', ()=> drawer.classList.add('open'));
+    closeBtn.addEventListener('click', ()=> drawer.classList.remove('open'));
+    function closeDrawer(){ drawer.classList.remove('open'); }
+
+    // Replace with your phone number in full international format (no + or spaces). Example for Brazil: 5511999999999
+    const PHONE_NUMBER = '5511999999999';
+    const PRE_MESSAGE = encodeURIComponent('Olá! Quero saber mais sobre o Código da Renda.');
+    function openWhatsApp(){
+      const url = `https://wa.me/${PHONE_NUMBER}?text=${PRE_MESSAGE}`;
+      window.open(url, '_blank');
+    }
+
+    // Simple contact form -> opens mail client (no backend). You can wire to a service later.
+    function sendMail(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      const subject = encodeURIComponent('Contato via site — ' + name);
+      const body = encodeURIComponent(`Nome: ${name}\nEmail: ${email}\n\n${message}`);
+      window.location.href = `mailto:seuemail@exemplo.com?subject=${subject}&body=${body}`;
+      return false;
+    }
+  </script></body>
+  </html>
